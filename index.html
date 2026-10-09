@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0a0e17" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="PlayWatch" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="icon" href="icon-192.png" />
+  <title>PlayWatch — משחקים, סרטים וסדרות במקום אחד</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="navbar-mount"></div>
+
+  <header class="hero container">
+    <h1>כמה עולמות. <span class="accent">מקום אחד.</span></h1>
+    <p>משחקים וגם סרטים וסדרות: מה יוצא, מה שווה, איפה לשחק או לצפות — עם רשימות ותזכורות משותפות לכולם.</p>
+  </header>
+
+  <main class="container" style="padding-bottom:60px;">
+    <div class="worlds">
+      <a class="world-card games" href="games.html">
+        <div class="w-emoji">🎮</div>
+        <h2>משחקים</h2>
+        <p>קטלוג משחקים לכל הפלטפורמות, השוואת מחירים בין חנויות ותאריכי יציאה.</p>
+        <span class="btn btn-primary">לעולם המשחקים ←</span>
+      </a>
+      <a class="world-card watch" href="watch.html" style="--blue:#a855f7;">
+        <div class="w-emoji">🍿</div>
+        <h2>סרטים וסדרות</h2>
+        <p>מה בטרנד ומה מגיע בקרוב, ובאילו שירותי סטרימינג אפשר לצפות בישראל.</p>
+        <span class="btn btn-primary" style="background:#a855f7;">לעולם הצפייה ←</span>
+      </a>
+    </div>
+
+    <div class="row-head"><h2>🎮 פופולרי במשחקים</h2><a href="games.html">עוד משחקים ←</a></div>
+    <div class="mini-row" id="row-games"></div>
+
+    <div class="row-head"><h2>🍿 פופולרי בסרטים וסדרות</h2><a href="watch.html">עוד סרטים וסדרות ←</a></div>
+    <div class="mini-row" id="row-watch"></div>
+
+    <div class="row-head"><h2>📅 יוצא בקרוב בכל העולמות</h2></div>
+    <div class="mini-row" id="row-soon"></div>
+  </main>
+
+  <footer class="site-footer">
+    PlayWatch · פרויקט הדגמה · נתוני משחקים מ-<a href="https://rawg.io" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">RAWG</a> · <a href="https://www.themoviedb.org" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">TMDB</a> · JustWatch · מחירים מ-CheapShark
+  </footer>
+  <script src="data.js"></script>
+  <script src="i18n.js"></script>
+  <script src="config.local.js" onerror="void 0"></script>
+  <script src="app.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>
