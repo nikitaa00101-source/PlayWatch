@@ -694,7 +694,7 @@ async function rawgFetch(path, params) {
   const q = new URLSearchParams(params || {});
   let url;
   if (PW_KEYS.rawg) { q.set("key", PW_KEYS.rawg); url = `${RAWG_BASE}${path}?${q}`; }
-  else url = `/api/rawg${path}?${q}`;
+  else url = `/.netlify/functions/api/rawg${path}?${q}`;
   const r = await fetch(url);
   if (!r.ok) throw new Error("RAWG " + r.status);
   return r.json();
@@ -790,7 +790,7 @@ async function tmdbFetch(path, params) {
   const q = new URLSearchParams(Object.assign({ language: IS_EN ? "en-US" : "he-IL" }, params || {}));
   let url;
   if (PW_KEYS.tmdb) { q.set("api_key", PW_KEYS.tmdb); url = `${TMDB_BASE}${path}?${q}`; }
-  else url = `/api/tmdb${path}?${q}`;
+  else url = `/.netlify/functions/api/tmdb${path}?${q}`;
   const r = await fetch(url);
   if (!r.ok) throw new Error("TMDB " + r.status);
   return r.json();
