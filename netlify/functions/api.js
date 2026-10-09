@@ -19,7 +19,8 @@ exports.handler = async (event) => {
   q.set(t.keyParam, key);
   try {
     const r = await fetch(`${t.base}${path}?${q}`);
-    const body = await r.text();
+    /* RAWG מחזיר את המפתח בתוך קישורי next/previous — מסירים אותו לפני שמחזירים לדפדפן */
+    const body = (await r.text()).split(key).join("");
     return {
       statusCode: r.status,
       headers: { "content-type": "application/json", "cache-control": "public, max-age=600" },
